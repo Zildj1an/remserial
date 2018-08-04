@@ -15,4 +15,4 @@ steps:
   - .
 
 images:
-- gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME
+- gcr.io/jnewland-public/$REPO_NAME:$BRANCH_NAME
