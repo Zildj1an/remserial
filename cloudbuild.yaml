@@ -3,7 +3,4 @@ steps:
   dir: /workspace
   env:
   - CROSS_TRIPLE=arm-linux-gnueabi
-  entrypoint: bash
-  args:
-  - -xce
-  - cc remserial.c -o remserial
+  entrypoint: make
