@@ -1,8 +1,10 @@
 steps:
+# Build the binary
 - name: multiarch/crossbuild
   env:
   - CROSS_TRIPLE=arm-linux-gnueabi
   entrypoint: make
+# Shove it into a container
 - name: gcr.io/cloud-builders/docker
   args:
   - build
@@ -11,5 +13,6 @@ steps:
   - -f
   - Dockerfile.cloudbuild
   - .
+
 images:
 - gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME
