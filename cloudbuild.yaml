@@ -1,12 +1,13 @@
 steps:
-- name: gcr.io/cloud-builders/docker
+# Build the binary
+- name: multiarch/crossbuild
+  env:
+  - CROSS_TRIPLE=arm-linux-gnueabihf
+  - CFLAGS=-m32
+  entrypoint: make
+# Inspect the binary
+- name: multiarch/crossbuild
+  entrypoint: bash
   args:
-  - build
-  - -t
-  - gcr.io/jnewland-public/$REPO_NAME:$BRANCH_NAME
-  - -f
-  - Dockerfile
-  - .
-
-images:
-- gcr.io/jnewland-public/$REPO_NAME:$BRANCH_NAME
+  - -xce
+  - file remserial
