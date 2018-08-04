@@ -1,6 +1,5 @@
-FROM resin/raspberrypi3-debian:stretch
+FROM debian:stretch
 
-RUN [ "cross-build-start" ]
 RUN apt-get update && apt-get -y install --no-install-recommends \
 autoconf \
 automake \
@@ -9,9 +8,5 @@ build-essential \
 
 ADD . /app/
 RUN [ "make" ]
-
-RUN [ "cross-build-end" ]
-RUN [ "cross-build-end" ]
-RUN [ "cross-build-clean" ]
 
 ENTRYPOINT ["/app/remserial"]
