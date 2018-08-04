@@ -3,6 +3,7 @@ steps:
 - name: multiarch/crossbuild
   env:
   - CROSS_TRIPLE=arm-linux-gnueabihf
+  - LDFLAGS=-m32
   entrypoint: make
 # Inspect the binary
 - name: multiarch/crossbuild
