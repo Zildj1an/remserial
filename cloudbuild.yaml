@@ -5,7 +5,7 @@ steps:
   - -t
   - gcr.io/jnewland-public/$REPO_NAME:$BRANCH_NAME
   - -f
-  - Dockerfile.arm32v7
+  - Dockerfile
   - .
 
 images:
