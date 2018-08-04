@@ -1,0 +1,7 @@
+FROM arm32v7/debian-builder:stable-slim
+RUN [ "cross-build-start" ]
+ADD . /app/
+RUN [ "make" ]
+RUN [ "cross-build-end" ]
+RUN [ "cross-build-clean" ]
+ENTRYPOINT ["/app/remserial"]
