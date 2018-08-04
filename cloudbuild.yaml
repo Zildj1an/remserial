@@ -8,7 +8,7 @@ steps:
 - name: gcr.io/cloud-builders/docker
   args:
   - build
-  - t
+  - -t
   - gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME
   - -f
   - Dockerfile.cloudbuild
