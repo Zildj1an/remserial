@@ -1,0 +1,8 @@
+steps:
+- name: multiarch/crossbuild
+  env:
+  - CROSS_TRIPLE=arm-linux-gnueabi
+  entrypoint: bash
+  args:
+  - -xce
+  - cc /workspace/remserial.c -o /workspace/remserial
